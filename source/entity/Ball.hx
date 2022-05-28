@@ -23,7 +23,7 @@ class Ball extends Entity
     public function new(x,y)
     {
         super(x,y);
-        this.color = flixel.util.FlxColor.BLUE;
+        this.color = flixel.util.FlxColor.WHITE;
     }
 
     override public function update(elapsed: Float)
