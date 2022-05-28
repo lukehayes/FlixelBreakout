@@ -8,9 +8,9 @@ import flixel.FlxSprite;
   **/
 class Entity extends flixel.FlxSprite
 {
-    public function new(x,y)
+    public function new(x,y, w:Int = 10, h:Int = 10)
     {
         super(x,y);
-        makeGraphic(10,10, FlxColor.WHITE);
+        makeGraphic(w,h, FlxColor.WHITE);
     }
 }
