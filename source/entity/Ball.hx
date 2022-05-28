@@ -17,6 +17,10 @@ class Ball extends Entity
     var dy : Int = 1;
 
     /**
+      Flag event if a screen edge is hit **/
+    public var hitEdge : Bool = false;
+
+    /**
       Speed of the ball **/
     final SPEED : Int = 200;
 
@@ -43,11 +47,13 @@ class Ball extends Entity
         if(x > (FlxG.width - -10) || x < 10)
         {
             dx = -dx;
+            hitEdge = true;
         }
 
         if(y > (FlxG.height - -10) || y < 10)
         {
             dy = -dy;
+            hitEdge = true;
         }
     }
 }
