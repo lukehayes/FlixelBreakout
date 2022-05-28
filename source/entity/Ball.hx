@@ -18,7 +18,7 @@ class Ball extends Entity
 
     /**
       Speed of the ball **/
-    final SPEED : Int = 400;
+    final SPEED : Int = 200;
 
     public function new(x,y)
     {
