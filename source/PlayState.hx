@@ -1,17 +1,21 @@
 package;
 
+import flixel.group.FlxGroup;
 import flixel.FlxState;
 import block.Block;
+import block.BlockGen;
 
 class PlayState extends FlxState
 {
-    var block : Block;
+    var grp : FlxTypedGroup<Block>;
 
     override public function create()
     {
         super.create();
-        block = new Block(300,300);
-        add(block);
+
+        // Generate blocks, add them to the state.
+        grp = BlockGen.generate(10);
+        add(grp);
     }
 
     override public function update(elapsed:Float)
