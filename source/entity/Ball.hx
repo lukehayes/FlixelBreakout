@@ -1,5 +1,7 @@
 package entity;
 
+import flixel.FlxG;
+
 /**
   The ball in the breakout game;
   **/
@@ -16,7 +18,7 @@ class Ball extends Entity
 
     /**
       Speed of the ball **/
-    final SPEED : Int = 100;
+    final SPEED : Int = 400;
 
     public function new(x,y)
     {
@@ -28,5 +30,24 @@ class Ball extends Entity
     {
         x += dx * SPEED * elapsed;
         y += dy * SPEED * elapsed;
+
+        this.checkEdgeCollision();
+    }
+
+    /**
+      Check if the ball hits an edge of the screen,
+      if so then reverse the direction axis.
+      **/
+    private function checkEdgeCollision()
+    {
+        if(x > (FlxG.width - -10) || x < 10)
+        {
+            dx = -dx;
+        }
+
+        if(y > (FlxG.height - -10) || y < 10)
+        {
+            dy = -dy;
+        }
     }
 }
