@@ -9,11 +9,11 @@ class BlockGen
 {
     /**
       Spacing for each blocks X axis **/
-    static final GAPX = 30;
+    static final GAPX = 60;
 
     /**
       Spacing for each blocks Y axis **/
-    static final GAPY = 15;
+    static final GAPY = 30;
 
     /**
       Generate a grid of blocks.
@@ -29,7 +29,7 @@ class BlockGen
         {
             for(y in 0...size)
             {
-                var block = new Block(x * GAPX, y * GAPY);
+                var block = new Block(200 + x * GAPX, 30 + y * GAPY);
                 group.add(block);
             }
         }
