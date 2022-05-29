@@ -2,6 +2,7 @@ package;
 
 import flixel.group.FlxGroup;
 import flixel.FlxState;
+import flixel.FlxG;
 import block.BlockGen;
 import block.Block;
 import entity.Ball;
@@ -26,5 +27,14 @@ class PlayState extends FlxState
     override public function update(elapsed:Float)
     {
         super.update(elapsed);
+
+        FlxG.collide(ball, ballGrp, processCollisions);
+    }
+
+    private function processCollisions(ball, block)
+    {
+        block.kill();
+        ball.dx = -ball.dx;
+        ball.dy = -ball.dy;
     }
 }
