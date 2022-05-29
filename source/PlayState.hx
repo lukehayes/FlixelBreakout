@@ -9,15 +9,15 @@ import entity.Ball;
 class PlayState extends FlxState
 {
     var ball : Ball;
-    var grp : FlxTypedGroup<Block>;
+    var ballGrp : FlxTypedGroup<Block>;
 
     override public function create()
     {
         super.create();
 
         // Generate blocks, add them to the state.
-        grp = BlockGen.generate(10);
-        add(grp);
+        ballGrp = BlockGen.generate(10);
+        add(ballGrp);
 
         ball = new Ball(200,300);
         add(ball);
