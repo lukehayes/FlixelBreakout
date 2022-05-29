@@ -10,11 +10,11 @@ class Ball extends Entity
 
     /**
       X direction **/
-    var dx : Int = 1;
+    public var dx : Int = 1;
 
     /**
       Y direction **/
-    var dy : Int = 1;
+    public var dy : Int = 1;
 
     /**
       Flag event if a screen edge is hit **/
